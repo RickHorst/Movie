@@ -16,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/movies', function () {
+//     return view('movies');
+// });
+
+Route::get('/movies', 'App\Http\Controllers\MovieController@list')->middleware('auth');
+// Route::get('/movies', function () {
+    // return view('movies');
+// });
 
 Auth::routes();
 
